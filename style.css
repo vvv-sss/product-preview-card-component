@@ -1,0 +1,230 @@
+/* === CSS Reset === */
+/* #region */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* #endregion */
+
+/* === Variables === */
+/* #region */
+
+:root {
+    --color-primary-100: hsl(158, 36%, 37%);
+    --color-primary-200: hsl(30, 38%, 92%);
+
+    --color-accent-100: hsl(158, 42%, 18%);
+
+    --color-neutral-100: hsl(212, 21%, 14%);
+    --color-neutral-200: hsl(228, 12%, 48%);
+    --color-neutral-300: hsl(0, 0%, 100%);
+
+    --color-body: var(--color-primary-200);
+
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Fraunces', serif;
+
+    --fs-100: 0.75rem; /* 12px */
+    --fs-200: 0.81rem; /* 13px */
+    --fs-300: 0.88rem; /* 14px */
+    --fs-400: 2rem;    /* 32px */
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --border-radius-100: 0.5rem;  /* 8px */
+    --border-radius-200: 0.63rem; /* 10px */
+
+    --border-radius-card: var(--border-radius-200);
+    --border-radius-btn: var(--border-radius-100);
+}
+/* #endregion */
+
+/* === Global styles === */
+/* #region */
+body {
+    background-color: var(--color-body);
+}
+/* #endregion */
+
+/* === Main Section === */
+/* #region */
+
+.product-card {
+    margin: 1.75rem 1rem;
+    border-radius: var(--border-radius-card);
+    background-color: var(--color-neutral-300);
+}
+
+.product-card__hero-image {
+    display: block;
+    width: 100%;
+    border-radius: var(--border-radius-card) var(--border-radius-card) 0 0;
+    object-fit: cover;
+}
+
+/* Product Info Section */
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info__general-name {
+    margin-bottom: 1.25rem;
+    color: var(--color-neutral-200);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-regular);
+    text-transform: uppercase;
+    letter-spacing: 0.31rem;
+}
+
+.product-info__product-name {
+    margin-bottom: 1.5rem;
+    color: var(--color-neutral-100);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+    line-height: 2rem;
+}
+
+.product-info__description {
+    margin-bottom: 1.81rem;
+    color: var(--color-neutral-200);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-regular);
+    line-height: 1.44rem;
+}
+
+.product-info__price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.88rem;
+}
+
+.product-info__price-actual {
+    margin-right: 1.19rem;
+    color: var(--color-primary-100);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+}
+
+.product-info__price-before {
+    color: var(--color-neutral-200);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-200);
+    font-weight: var(--fw-regular);
+    text-decoration-line: line-through;
+}
+
+.product-info__price-actual::before,
+.product-info__price-before::before {
+    content: '$';
+}
+
+/* Add to Cart Button */
+
+.add-to-cart__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: var(--border-radius-btn);
+    background-color: var(--color-primary-100);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-to-cart__btn:hover {
+    background-color: var(--color-accent-100);
+}
+
+.add-to-cart__btn__image {
+    width: 0.9rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+.add-to-cart__btn__name {
+    color: var(--color-neutral-300);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+}
+
+/* #endregion */
+
+/* === Media Queries ===*/
+/* #region */
+
+    @media only screen and (min-width: 610px) {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .product-card {
+            display: flex;
+            max-width: 37.5rem;
+            max-height: 28.13rem;
+        }
+
+        .product-card__hero-container,
+        .product-info {
+            flex: 1 1 50%;
+        }
+
+        .product-card__hero-image {
+            border-radius: var(--border-radius-card) 0 0 var(--border-radius-card);
+        }
+    }
+
+/* #endregion */
